@@ -18,7 +18,7 @@ from pydantic_settings import (
 from typing import Annotated, Any, Tuple, Type
 from typing_extensions import Self
 
-__version__ = "v2.1.1"
+__version__ = "v2.1.2"
 
 opsgenie_logo_url = "https://i.imgur.com/NjiEBCu.png"
 pagerduty_logo_url = "https://i.imgur.com/IVvdFCV.png"
@@ -102,6 +102,8 @@ class Options(BaseModel):
     additional_welcome_messages: list[AdditionalWelcomeMessage] | None = None
     auto_invite_groups: list[GroupAutoInvite] | None = None
     channel_name_prefix: str | None = "inc"
+    channel_name_date_format: str | None = "YYYY-MM-DD"
+    channel_name_use_date_prefix: bool | None = False
     meeting_link: str | None = None
     skip_logs_for_user_agent: list[str] | None = None
     show_most_recent_incidents_app_home_limit: int = 5
